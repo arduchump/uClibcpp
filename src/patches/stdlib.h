@@ -7,6 +7,7 @@ extern "C"
 #endif
 
 int system(const char *command);
+char *getenv(const char *name);
 
 #ifdef __cplusplus
 }
