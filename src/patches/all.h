@@ -4,6 +4,7 @@
 
 #include "stdio.h"
 #include "stdlib.h"
+#include "string.h"
 #include <Arduino.h>
 
 // Clear macros duplicate defined in Arduino.h
