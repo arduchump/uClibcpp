@@ -66,3 +66,8 @@ char *tmpnam(char *s)
 {
   return NULL;
 }
+
+int fileno(FILE *stream)
+{
+  return (int)stream;
+}

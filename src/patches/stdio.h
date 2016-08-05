@@ -30,6 +30,7 @@ void setbuf(FILE *stream, char *buf);
 int setvbuf(FILE *stream, char *buf, int mode, size_t size);
 FILE *tmpfile(void);
 char *tmpnam(char *s);
+int fileno(FILE *stream);
 
 #ifdef __cplusplus
 }
