@@ -44,6 +44,6 @@
 #define __BUILD_STATIC_LIB__ 1
 #define __BUILD_ONLY_STATIC_LIB__ 1
 #undef __DODEBUG__
-#define __UCLIBCXX_EXCEPTION_SUPPORT__
+#undef __UCLIBCXX_EXCEPTION_SUPPORT__
 
 #include "patches/all.h"

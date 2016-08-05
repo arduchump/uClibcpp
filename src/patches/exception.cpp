@@ -1,10 +1,8 @@
 
 #include <exception>
 
-#ifdef __UCLIBCXX_EXCEPTION_SUPPORT__
-
 namespace std{
-	_UCXXEXPORT static char * __std_exception_what_value = "exception";
+  _UCXXEXPORT static const char * __std_exception_what_value = "exception";
 
 	//We are providing our own versions to be sneaky
 
@@ -23,6 +21,3 @@ namespace std{
 
 
 }
-
-
-#endif
