@@ -3,15 +3,16 @@
 import argparse
 import os
 import os.path
+import tarfile
+import shutil
 
 def main():
     package_name = "uClibc++-0.2.4"
     file_name = "%s.tar.bz2" % package_name
 
     if not os.path.exists("src"):
+        shutil.rmtree("./src", ignore_errors=True)
         os.makedirs("src")
-
-    os.system("rm -rf ./src/*")
 
     if not os.path.exists("__build__"):
         os.makedirs("__build__")
@@ -20,10 +21,8 @@ def main():
     if not os.path.exists(file_name):
         os.system("wget https://git.busybox.net/uClibc++/snapshot/%s" % file_name)
 
-    os.system("tar xvf %s" % file_name)
-
-    if not os.path.exists("src"):
-        os.makedirs("src")
+    with tarfile.open(file_name, "r:bz2") as atarfile:
+        atarfile.extractall()
 
     os.system("cp -rf ./%s/src/* ../src" % package_name)
     os.system("cp -rf ./%s/include/* ../src" % package_name)
