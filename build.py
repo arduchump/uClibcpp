@@ -6,16 +6,18 @@ import os.path
 import tarfile
 import shutil
 
+def makedirs(apath):
+    if not os.path.exists(apath):
+        os.makedirs(apath)
+
 def main():
     package_name = "uClibc++-0.2.4"
     file_name = "%s.tar.bz2" % package_name
 
-    if not os.path.exists("src"):
-        shutil.rmtree("./src", ignore_errors=True)
-        os.makedirs("src")
+    shutil.rmtree("./src", ignore_errors=True)
+    makedirs("./src")
 
-    if not os.path.exists("__build__"):
-        os.makedirs("__build__")
+    makedirs("__build__")
     os.chdir("__build__")
 
     if not os.path.exists(file_name):
