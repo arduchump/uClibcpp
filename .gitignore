@@ -33,3 +33,13 @@
 
 # Build dir
 __build__
+
+# Qt Creator Project files
+*.config
+*.creator
+*.user
+*.files
+*.includes
+
+# Generated src directory
+src
