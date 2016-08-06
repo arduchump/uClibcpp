@@ -38,7 +38,6 @@ def download_file(url):
     with open(os.path.basename(url), "wb") as output_file:
         c = pycurl.Curl()
         c.setopt(pycurl.URL, url)
-        # c.setopt(pycurl.WRITEFUNCTION, b.write)
         c.setopt(pycurl.NOPROGRESS, 0) # Display progress ...
         c.setopt(pycurl.FOLLOWLOCATION, 1)
         c.setopt(pycurl.MAXREDIRS, 10)
