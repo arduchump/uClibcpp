@@ -3,6 +3,9 @@
 
 #include <stdio.h>
 
+// Latest stdio.h already supported predeclare these functions
+#ifndef BUFSIZ
+
 #ifdef FILE
 #undef FILE
 typedef struct __file FILE;
@@ -35,5 +38,7 @@ int fileno(FILE *stream);
 #ifdef __cplusplus
 }
 #endif
+
+#endif // BUFSIZ
 
 #endif // __INCLUDED_0E3B8D125AE311E6907500F1F38F93EF
